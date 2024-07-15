@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RaGae.Indexing.Access\RaGae.Indexing.Access.csproj" />
+    <ProjectReference Include="..\RaGae.Indexing.Model\RaGae.Indexing.Model.csproj" />
+  </ItemGroup>
+
+</Project>

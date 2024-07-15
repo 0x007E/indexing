@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaGae.Indexing.Model", "RaGae.Indexing.Model\RaGae.Indexing.Model.csproj", "{F0275BC1-C8E6-4784-930D-CF241D49EDC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaGae.Indexing.Access", "RaGae.Indexing.Access\RaGae.Indexing.Access.csproj", "{87A0F92D-8E8C-4AF1-8482-0342428BFBD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaGae.Indexing.Access.Core", "RaGae.Indexing.Access.Core\RaGae.Indexing.Access.Core.csproj", "{382E235E-6E39-4479-A820-390E932F0C2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaGae.Indexing.Access.File", "RaGae.Indexing.Access.File\RaGae.Indexing.Access.File.csproj", "{C446743E-66BF-49F4-84D4-2FD76F1E7F97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaGae.Indexing.Provider", "RaGae.Indexing.Provider\RaGae.Indexing.Provider.csproj", "{840B70F1-F79D-4137-AA32-54F38E359226}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ragae.Indexing.Command", "Ragae.Indexing.Command\Ragae.Indexing.Command.csproj", "{ED861ABF-7179-4999-B94D-69017484FCD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0275BC1-C8E6-4784-930D-CF241D49EDC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0275BC1-C8E6-4784-930D-CF241D49EDC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0275BC1-C8E6-4784-930D-CF241D49EDC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0275BC1-C8E6-4784-930D-CF241D49EDC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87A0F92D-8E8C-4AF1-8482-0342428BFBD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87A0F92D-8E8C-4AF1-8482-0342428BFBD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87A0F92D-8E8C-4AF1-8482-0342428BFBD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87A0F92D-8E8C-4AF1-8482-0342428BFBD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{382E235E-6E39-4479-A820-390E932F0C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{382E235E-6E39-4479-A820-390E932F0C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{382E235E-6E39-4479-A820-390E932F0C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{382E235E-6E39-4479-A820-390E932F0C2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C446743E-66BF-49F4-84D4-2FD76F1E7F97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C446743E-66BF-49F4-84D4-2FD76F1E7F97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C446743E-66BF-49F4-84D4-2FD76F1E7F97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C446743E-66BF-49F4-84D4-2FD76F1E7F97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{840B70F1-F79D-4137-AA32-54F38E359226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{840B70F1-F79D-4137-AA32-54F38E359226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{840B70F1-F79D-4137-AA32-54F38E359226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{840B70F1-F79D-4137-AA32-54F38E359226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED861ABF-7179-4999-B94D-69017484FCD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED861ABF-7179-4999-B94D-69017484FCD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED861ABF-7179-4999-B94D-69017484FCD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED861ABF-7179-4999-B94D-69017484FCD2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43406FE4-AD78-429E-AA41-B5AD5EB30717}
+	EndGlobalSection
+EndGlobal
