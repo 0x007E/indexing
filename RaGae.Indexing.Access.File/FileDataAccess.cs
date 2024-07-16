@@ -50,12 +50,14 @@ namespace RaGae.Indexing.Access.File
 
         }
 
-        public override async Task<T> ReadAsync()
+        public override async Task<IList<T>> ReadAsync()
         {
-            using FileStream readStream = System.IO.File.OpenRead(_file);
-            IList<T> data = await JsonSerializer.DeserializeAsync<IList<T>>(readStream);
+            //using FileStream readStream = System.IO.File.OpenRead(_file);
+            //IList<T> data = await JsonSerializer.DeserializeAsync<IList<T>>(readStream);
 
-            return data.AsParallel().FirstOrDefault(i => i.Id == 1);
+            //return data.AsParallel().FirstOrDefault(i => i.Id == 1);
+
+            throw new NotImplementedException();
         }
 
         protected override void DisposeCore()

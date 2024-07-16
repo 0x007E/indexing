@@ -39,7 +39,7 @@ namespace RaGae.Indexing.Access.Core
             }
         }
 
-        public override abstract Task<T> ReadAsync();
+        public override async Task<IList<T>> ReadAsync() => await _dataContext.Set<T>().ToListAsync();
 
         protected async override ValueTask DisposeAsyncCore()
         {

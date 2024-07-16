@@ -19,7 +19,7 @@ namespace RaGae.Indexing.Access
 
         public abstract Task DeleteAsync(T item);
 
-        public abstract Task<T> ReadAsync();
+        public abstract Task<IList<T>> ReadAsync();
 
 
         public virtual void Dispose()

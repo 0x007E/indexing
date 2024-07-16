@@ -2,10 +2,11 @@
 using Microsoft.Extensions.Configuration;
 using RaGae.Indexing.Access.Core;
 using RaGae.Indexing.Model;
+using RaGae.Indexing.Model.Extensions;
 using RaGae.Indexing.Provider;
 using RaGae.Indexing.Provider.Enumerations;
 
-namespace Ragae.Indexing.Command
+namespace RaGae.Indexing.Command
 {
     internal class Program
     {
@@ -26,10 +27,40 @@ namespace Ragae.Indexing.Command
             //DirectoryModel directoryModel = directoryService.ScanPathAndCreateModel();
 
             DataContext dataContext = new DataContext(builder.Options);
-            DataService<DirectoryModel> dataService = new DataService<DirectoryModel>(new DirectoryCoreDataAccess(dataContext));
+            DataService<DirectoryModel> directoryDataService = new DataService<DirectoryModel>(new DirectoryCoreDataAccess(dataContext));
+            DataService<FileModel> fileDataService = new DataService<FileModel>(new FileCoreDataAccess(dataContext));
 
             //await dataService.SaveAsync(directoryModel);
-            DirectoryModel directoryModel = await dataService.ReadAsync();
+            IList<DirectoryModel> directoryModel = await directoryDataService.ReadAsync();
+            IList<FileModel> fileModel = await fileDataService.ReadAsync();
+
+            // Get Size of root /
+            Console.WriteLine($"Complete file size: {BytesToString(directoryModel?.FirstOrDefault().Size ?? 0)}");
+
+            // Find the oldest file (last modified)
+            Console.WriteLine($"Oldest file: {fileModel.OldestFile().Name}");
+
+            // Find the newest file (last modified)
+            Console.WriteLine($"Newest file: {fileModel.NewestFile().Name}");
+
+            // Find the biggest file
+            Console.WriteLine($"Biggest file: {fileModel.BiggestFile().Name}");
+
+            // Find the smallest file
+            Console.WriteLine($"Smallest file: {fileModel.SmallestFile().Name}");
+
+            // Find the Median of all filesizes
+            // (n1 + nx)/m
+            Console.WriteLine($"Median of all filesizes: {Math.Round(fileModel.Median(), 2)}");
+
+            // Most datatypes used (e.g. *.jpg)
+            Console.WriteLine($"Most used datatype: {fileModel.MostUsedExtension()}");
+
+            // Count specific file types (*.jpg, *.exe, *.html, *.*)
+            Console.WriteLine($"Count given file type: {fileModel.CountFileType(".docx")}\n");
+
+            // Median filename length
+            Console.WriteLine($"\nMedian filename length: {Math.Round(fileModel.MedianFileNameLength(), 2)}");
 
 
             Console.WriteLine("Done");
@@ -57,6 +88,18 @@ namespace Ragae.Indexing.Command
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ServiceStatusReply));
             }
+        }
+
+        private static string BytesToString(long byteCount)
+        {
+            string[] suf = { " B", " KB", " MB", " GB", " TB", " PB", " EB" }; // long runs out around EB
+            if (byteCount == 0)
+                return "0" + suf[0];
+            long bytes = Math.Abs(byteCount);
+            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
+
+            return (Math.Sign(byteCount) * num).ToString() + suf[place];
         }
     }
 }

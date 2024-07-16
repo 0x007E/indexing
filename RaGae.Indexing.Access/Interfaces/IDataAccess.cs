@@ -5,6 +5,6 @@
         Task CreateAsync(T item);
         Task UpdateAsync(T item);
         Task DeleteAsync(T item);
-        Task<T> ReadAsync();
+        Task<IList<T>> ReadAsync();
     }
 }

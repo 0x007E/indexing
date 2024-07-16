@@ -14,6 +14,6 @@ namespace RaGae.Indexing.Provider
 
         public Task SaveAsync(T model) => _dataAccess.CreateAsync(model);
 
-        public Task<T> ReadAsync() => _dataAccess.ReadAsync();
+        public Task<IList<T>> ReadAsync() => _dataAccess.ReadAsync();
     }
 }
